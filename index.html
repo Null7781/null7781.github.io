@@ -13,5 +13,15 @@
 <h2 class="title">Page num1</h2>
 <a href="index2.html">Second Page</a>
 <button id="button01" onclick="">button</button>
+<script>
+function press() {
+ var url="index2.html";
+ window.location = url;
+};
+
+document.getElementByID("button01").onclick = function() {
+  press();
+};
+</script>
 <p class="content"> Interesing Text 📱</p>
 </body>
