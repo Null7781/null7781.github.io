@@ -12,6 +12,16 @@
 <body style="background-color:green">
 <h2 class="title">Page num1</h2>
 
-<button id="button02" onclick="javascript:alert(':)')">Go to previous page</button>
+<button id="button02">Go to previous page</button>
+
+function press() {
+ var url="index.html";
+ window.location = url;
+}
+
+document.getElementByID("button02").onclick = function() {
+  press();
+}
+
 <p class="content"> Go Back now</p>
 </body>
