@@ -11,15 +11,14 @@
 
 <body style="background-color:green">
 <h2 class="title">Page num1</h2>
-<a href="index2.html">Second Page</a>
-<button id="button01" onclick="">button</button>
+<button id="button01">Change Page</button>
 <script>
 function press() {
  var url="index2.html";
  window.location = url;
 };
 
-document.getElementByID("button01").onclick = function() {
+document.getElementById("button01").onclick = function() {
   press();
 };
 </script>
