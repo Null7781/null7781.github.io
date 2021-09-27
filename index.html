@@ -1,22 +1,20 @@
 <html>
 <html lang="en">
 <head>
-<script type="text/javascript" src="functions.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Test</title>
 <link rel="icon" type="image/png" href=".png" />
 <link rel="stylesheet" href="theme.css" >
 </head>
-<input type="checkbox" id="check01" name="Yes" value="1">
+ <input type="checkbox" id="check01" name="Yes" value="1">
 
 <body style="background-color:green">
 <h2 class="title">Page num1</h2>
 <button id="button01">Next Page</button>
 
- <button id="button02" style="color:red;">Error</button>
- 
-<script>
+ <button id="button02" style="color:red; position:absolute; top:-50px; left:0px;">Error</button>
 
+<script>
  
 let numa;
 let numb;
@@ -38,6 +36,8 @@ function press() {
  var url="index2.html";
  window.location = url;
 };
+
+ 
 
 document.getElementById("button02").onclick = function() {
   alert(numa + numb + numc + numd);
