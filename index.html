@@ -54,7 +54,7 @@ function moveRight(element) {
   var elementRight = elementStyle.getPropertyValue("left").replace("px", "");
   element.style.left = (Number(elementRight) + 20) + "px";
 }
-// Subtract from the left style attribute to go left
+
 function moveLeft(element) {
   var elementStyle = window.getComputedStyle(element);
   var elementLeft = elementStyle.getPropertyValue("left").replace("px", "");
