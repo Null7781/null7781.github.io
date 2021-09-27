@@ -130,7 +130,14 @@ document.getElementById("button02").onclick = function() {
 document.getElementById("button01").onclick = function() {
   press();
 };
-Control()
+
+var times = 10;
+for (var i=0;i<times;i++) 
+{
+  Control();
+  times++
+}
+ 
 Startup();
 </script>
 <p class="content"> Interesing Text 📱</p>
