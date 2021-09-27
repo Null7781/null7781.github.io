@@ -11,16 +11,43 @@
 
 <body style="background-color:green">
 <h2 class="title">Page num1</h2>
-<button id="button01">Change Page</button>
+<button id="button01">Next Page</button>
+
+ <button id="button02" style="color:red;">Error</button>
+ 
 <script>
+
+ 
+let numa;
+let numb;
+let numc;
+let numd;
+ 
+function randomNumbers(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+ 
+function Startup() {
+ numa = randomNumbers(1, 10);
+ numb = randomNumbers(1, 10);
+ numc = randomNumbers(1, 10);
+ numd = randomNumbers(1, 10);
+}
+ 
 function press() {
  var url="index2.html";
  window.location = url;
 };
 
+document.getElementById("button02").onclick = function() {
+  alert(numa + numb + numc + numd);
+};
+ 
 document.getElementById("button01").onclick = function() {
   press();
 };
+
+Startup();
 </script>
 <p class="content"> Interesing Text 📱</p>
 </body>
