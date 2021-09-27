@@ -12,7 +12,7 @@
 <h2 class="title">Page num1</h2>
 <button id="button01">Next Page</button>
 
- <button id="button02" style="color:red; position:absolute; top:-50px; left:0px;">Error</button>
+ <button id="button02" style="color:red; position:absolute; top:50px; left:5px;">Error</button>
 
 <script>
  
@@ -37,7 +37,91 @@ function press() {
  window.location = url;
 };
 
+function moveUp(element) {
+  var elementStyle = window.getComputedStyle(element);
+  var elementTop = elementStyle.getPropertyValue("top").replace("px", "");
+  element.style.top = (Number(elementTop) - 20) + "px";
+}
+
+function moveDown(element) {
+  var elementStyle = window.getComputedStyle(element);
+  var elementTop = elementStyle.getPropertyValue("top").replace("px", "");
+  element.style.top = (Number(elementTop) + 20) + "px";
+}
  
+function moveRight(element) {
+  var elementStyle = window.getComputedStyle(element);
+  var elementRight = elementStyle.getPropertyValue("left").replace("px", "");
+  element.style.left = (Number(elementRight) + 20) + "px";
+}
+// Subtract from the left style attribute to go left
+function moveLeft(element) {
+  var elementStyle = window.getComputedStyle(element);
+  var elementLeft = elementStyle.getPropertyValue("left").replace("px", "");
+  element.style.left = (Number(elementLeft) - 20) + "px";
+}
+
+var rightPressed = false;
+var leftPressed = false;
+var downPressed = false;
+var upPressed = false;
+
+document.addEventListener('keydown', keyDownHandler, false);
+document.addEventListener('keyup', keyUpHandler, false); 
+ 
+function keyDownHandler(event) {
+    if(event.keyCode == 39) {
+        rightPressed = true;
+    }
+    else if(event.keyCode == 37) {
+        leftPressed = true;
+    }
+    if(event.keyCode == 40) {
+    	downPressed = true;
+    }
+    else if(event.keyCode == 38) {
+    	upPressed = true;
+    }
+} 
+ 
+function keyDownHandler(event) {
+    if(event.keyCode == 39) {
+        rightPressed = false;
+    }
+    else if(event.keyCode == 37) {
+        leftPressed = false;
+    }
+    if(event.keyCode == 40) {
+    	downPressed = false;
+    }
+    else if(event.keyCode == 38) {
+    	upPressed = false;
+    }
+} 
+
+let Player = document.getElementById("button02");
+ 
+function Control() {
+ if(rightPressed) {
+  
+  moveRight(Player);
+  
+ }
+ else if (leftPressed) {
+ 
+  moveLeft(Player);
+  
+ }
+ if(downPressed) {
+ 
+  moveDown(Player);
+  
+ } else if (upPressed) {
+  
+  moveUp(Player);
+  
+ }
+}
 
 document.getElementById("button02").onclick = function() {
   alert(numa + numb + numc + numd);
