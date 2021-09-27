@@ -66,8 +66,8 @@ var leftPressed = false;
 var downPressed = false;
 var upPressed = false;
 
-document.addEventListener('keydown', keyDownHandler, false);
-document.addEventListener('keyup', keyUpHandler, false); 
+window.addEventListener('keydown', keyDownHandler, false);
+window.addEventListener('keyup', keyUpHandler, false); 
  
 function keyDownHandler(event) {
     if(event.keyCode == 39) {
@@ -101,7 +101,7 @@ function keyUpHandler(event) {
 
 let Player = document.getElementById("button02");
  
-function Control() {
+
  if(rightPressed) {
   
   moveRight(Player);
@@ -121,7 +121,6 @@ function Control() {
   moveUp(Player);
   
  }
-}
 
 document.getElementById("button02").onclick = function() {
   alert(numa + numb + numc + numd);
